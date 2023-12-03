@@ -15,7 +15,7 @@ variables:
   webAppName: 'keeperNotes'
 
   # Environment name
-  environmentName: ''
+  environmentName: 'keeperNotes'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
