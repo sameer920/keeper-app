@@ -28,6 +28,7 @@ stages:
     displayName: Build
     pool:
       vmImage: $(vmImageName)
+      name: 'selfhosted-k200439'
 
     steps:
     - task: ArchiveFiles@2
@@ -52,6 +53,7 @@ stages:
     environment: $(environmentName)
     pool:
       vmImage: $(vmImageName)
+      name: 'selfhosted-k200439'
     strategy:
       runOnce:
         deploy:
