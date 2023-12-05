@@ -1,15 +1,11 @@
-import path from 'path';
-import express from 'express';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-app.use(express.static(path.join(__dirname, '.', 'dist')));
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 });
-app.listen(port, () => {
-    console.log('Server is running on port: ' + port);
+app.listen(3000, () => {
+   console.log("server is r  unnig on port 3000");
+   console.log("Open your browser and hit url 'localhost:3000'");
 });
